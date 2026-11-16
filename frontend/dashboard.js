@@ -1,4 +1,7 @@
-/* dashboard.js - Show recent pollution data from /api/latest and /api/history
+function escapeHtml(s){
+  if(s === null || s === undefined) return '';
+  return String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;');
+}/* dashboard.js - Show recent pollution data from /api/latest and /api/history
    Polls /api/latest every 5-8s and fetches history on load.
 */
 
