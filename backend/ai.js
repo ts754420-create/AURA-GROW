@@ -34,7 +34,7 @@ async function callAiForPlantRecommendation(payload) {
     };
     const resp = await axios.post(GEMINI_API_URL, gemBody, {
       headers: { 'Content-Type': 'application/json', 'x-goog-api-key': GEMINI_API_KEY },
-      timeout: 20000
+      timeout: 45000
     });
     const gdata = resp.data || {};
     const parts = gdata.candidates && gdata.candidates[0] && gdata.candidates[0].content && gdata.candidates[0].content.parts;
